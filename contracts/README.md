@@ -70,3 +70,28 @@ After deployment, obtain the deployed contract address and ABI (Application Bina
    ```sh
    git clone https://github.com/YOUR_USERNAME/function-frontend.git
    cd function-frontend
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SimpleContract {
+    uint256 private value;
+
+    constructor() {
+        value = 0;
+    }
+
+    function getValue() public view returns (uint256) {
+        return value;
+    }
+
+    function incrementValue() public {
+        value += 1;
+    }
+
+    function setValue(uint256 _value) public {
+        value = _value;
+    }
+}
+
+# LICENSE
+This project is licensed under the MIT License - see the LICENSE.md file for details.
