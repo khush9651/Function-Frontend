@@ -48,7 +48,7 @@ This repository showcases a basic Solidity smart contract paired with a frontend
    Use an extension like "Live Server" in VSCode to run index.html and start interacting with the frontend.
 
 # Solidity Smart Contract (SimpleContract.sol)
-'''solidity
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
