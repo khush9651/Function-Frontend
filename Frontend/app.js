@@ -1,9 +1,16 @@
 
 // Replace this with your deployed contract address
-const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+const contractAddress = "0x440051dF4E4E248D3e80EFE978989Ba0979B6f54";
 
 // ABI of the contract(Replace it with your contract ABI)
 [
+	{
+		"inputs": [],
+		"name": "decrementValue",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
 	{
 		"inputs": [],
 		"name": "incrementValue",
@@ -28,6 +35,19 @@ const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newValue",
+				"type": "uint256"
+			}
+		],
+		"name": "ValueChanged",
+		"type": "event"
 	},
 	{
 		"inputs": [],
