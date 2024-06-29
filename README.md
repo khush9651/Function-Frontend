@@ -5,7 +5,7 @@ This repository showcases a basic Solidity smart contract paired with a frontend
 ## Project Structure
 
 - **`contracts/`** - Directory containing the Solidity smart contract:
-  - `SimpleContract.sol`: The file that implements a counter and integer storage.
+  - `AlternativeContract.sol`: The file that implements a counter and integer storage.
 
 - **`frontend/`** - Directory housing the frontend code (HTML and JavaScript):
   - `index.html`: The HTML file for the user interface.
@@ -52,8 +52,11 @@ This repository showcases a basic Solidity smart contract paired with a frontend
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract SimpleContract {
+contract AlternativeContract {
     uint256 private value;
+
+    // Event to log value changes
+    event ValueChanged(uint256 newValue);
 
     constructor() {
         value = 0;
@@ -65,10 +68,18 @@ contract SimpleContract {
 
     function incrementValue() public {
         value += 1;
+        emit ValueChanged(value);
+    }
+
+    function decrementValue() public {
+        require(value > 0, "Value cannot be less than zero");
+        value -= 1;
+        emit ValueChanged(value);
     }
 
     function setValue(uint256 _value) public {
         value = _value;
+        emit ValueChanged(value);
     }
 }
 ```
